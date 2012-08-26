@@ -1,6 +1,6 @@
 CFLAGS=	-Wall	 -g
 
-all:	clean	build
+rebuild:	clean	build
 build:
 	cc	$(arg).c	-o	$(arg)
 clean:
