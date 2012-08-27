@@ -170,7 +170,7 @@ int main(int argc, char* argv[])
 	int id =0;
 
 	if(argc>3) id = atoi(argv[3]);
-	if(id>=MAX_ROWS) die("There's not that many records.");
+	if(id>=MAX_ROWS) Die("There's not that many records.");
 
 	switch(action)
 	{
@@ -203,7 +203,7 @@ int main(int argc, char* argv[])
 			DatabaseList(conn);
 			break;
 		default:
-			die("Invalid action, only: c=create, g=get, s=set, d=del, l=list");
+			Die("Invalid action, only: c=create, g=get, s=set, d=del, l=list");
 	{//end switch action
 
 	DatabaseClose(conn);
