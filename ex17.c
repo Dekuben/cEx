@@ -162,7 +162,7 @@ void DatabaseList(struct Connection* conn)
 
 int main(int argc, char* argv[])
 {
-	if(argc<3) die("USAGE: ex17 <dbfile> <action> [action params]");
+	if(argc<3) Die("USAGE: ex17 <dbfile> <action> [action params]");
 
 	char* filename = argv[1];
 	char action = argv[2][0];
@@ -180,20 +180,20 @@ int main(int argc, char* argv[])
 			break;
 
 		case 'g':
-			if(argc != 4) die("Need an id to get");
+			if(argc != 4) Die("Need an id to get");
 
 			DatabaseGet(conn, id);
 			break;
 
 		case 's':
-			if(argc != 6) die("Need id, name, email to set.");
+			if(argc != 6) Die("Need id, name, email to set.");
 
 			DatabaseSet(conn, id, argv[4], argv[5]);
 			DatabaseWrite(conn);
 			break;
 
 		case 'd':
-			if(argc != 4) die("Need id to delete");
+			if(argc != 4) Die("Need id to delete");
 
 			DatabaseDelete(conn, id);
 			DatabaseWrite(conn);
