@@ -150,8 +150,8 @@ void DatabaseDelete(struct Connection* conn, int id)
 
 void DatabaseList()
 {
-	int = 0;
-	stuct Database* db = conn->db;
+	int i = 0;
+	struct Database* db = conn->db;
 
 	for(i=0;i<MAX_ROWS;i++)
 	{
