@@ -59,10 +59,10 @@ struct Connection* DatabaseOpen(const char* filename,
 char mode)
 {
 	struct Connection *conn = malloc(sizeof(struct Connection));
-	if (!conn) die("Memory Error!");
+	if (!conn) Die("Memory Error!");
 
 	conn->db = malloc(sizeof(struct Datbase));
-	if(!conn->db) die("Memory Error!"):
+	if(!conn->db) Die("Memory Error!"):
 
 	if(mode == 'c')
 	{
@@ -74,7 +74,7 @@ char mode)
 		if(conn->file)	DatabaseLoad(conn);
 	}
 
-	if(!conn->file) die("Failed to open the file!");
+	if(!conn->file) Die("Failed to open the file!");
 
 	return conn;
 }//end of function databaseopen
@@ -94,10 +94,10 @@ void DatabaseWrite(struct Connection* conn)
 	rewind(conn->file);
 
 	int rc = fwrite(conn->db, sizeof(Struct database), 1, conn->file);
-	if(rc != 1) die("Die failed to write to database!");
+	if(rc != 1) Die("Die failed to write to database!");
 
 	rc = fflush(conn->file);
-	if(rc == -1) die("Cannot flush database!");
+	if(rc == -1) Die("Cannot flush database!");
 }
 
 void DatabaseCreate(struct Connection* conn )
@@ -116,16 +116,16 @@ void DatabaseCreate(struct Connection* conn )
 void DatabaseSet(struct Connection* conn, int id, const char* name, const char* email)
 {
 	struct Address* addr = &conn->db->rows[id];
-	if(addr->set) die("Already set, deleted it first!");
+	if(addr->set) Die("Already set, deleted it first!");
 
 	addr->set =1;
 	//WARNING: bug, read the "How to break it" section and fix this
 	char* res = strncpy(addr->name,name,MAX_DATA);
 	//demonstrate the strncpy bug
-	if(!res) die("Name copy failed");
+	if(!res) Die("Name copy failed");
 
 	res = strncpy(addr->email,email,MAX_DATA);
-	if(!res) die("Email copy failed");
+	if(!res) Die("Email copy failed");
 }
 
 void DatabaseGet(struct Connection* conn, int id)
@@ -138,7 +138,7 @@ void DatabaseGet(struct Connection* conn, int id)
 	}
 	else
 	{
-		die("Id is not set.");
+		Die("Id is not set.");
 	}
 }
 
