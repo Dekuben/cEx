@@ -52,7 +52,7 @@ void DatabaseLoad(struct Connection* conn)
 		sizeof(struct Database),
 		1,
 		conn->file);
-	if(rc != 1) die("Failed to load db.");
+	if(rc != 1) Die("Failed to load db.");
 }
  
 struct Connection* DatabaseOpen(const char* filename,
