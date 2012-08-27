@@ -17,7 +17,7 @@ struct Address
 
 struct Database
 {
-	struct Address[MAX_ROWS];
+	struct Address rows[MAX_ROWS];
 };
 
 struct Connection
@@ -113,7 +113,7 @@ void DatabaseCreate(struct Connection* conn )
 	}
 }
 
-void DatabaseSet(struct Conection* conn, int id, const char* name, const char* email)
+void DatabaseSet(struct Connection* conn, int id, const char* name, const char* email)
 {
 	struct Address* addr = &conn->db->rows[id];
 	if(addr->set) die("Already set, deleted it first!");
