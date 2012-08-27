@@ -204,7 +204,7 @@ int main(int argc, char* argv[])
 			break;
 		default:
 			Die("Invalid action, only: c=create, g=get, s=set, d=del, l=list");
-	{//end switch action
+	}//end switch action
 
 	DatabaseClose(conn);
 
