@@ -26,7 +26,7 @@ struct Connection
 	struct Database* db;
 };
 
-void Die(cons char* message)
+void Die(const char* message)
 {
 	if(errno)
 	{
