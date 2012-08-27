@@ -148,7 +148,7 @@ void DatabaseDelete(struct Connection* conn, int id)
 	conn->db->rows[id] = addr;
 }
 
-void DatabaseList()
+void DatabaseList(struct Connection* conn)
 {
 	int i = 0;
 	struct Database* db = conn->db;
