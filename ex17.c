@@ -62,7 +62,7 @@ char mode)
 	if (!conn) Die("Memory Error!");
 
 	conn->db = malloc(sizeof(struct Database));
-	if(!conn->db) Die("Memory Error!"):
+	if(!conn->db) Die("Memory Error!");
 
 	if(mode == 'c')
 	{
