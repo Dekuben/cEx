@@ -93,7 +93,7 @@ void DatabaseWrite(struct Connection* conn)
 {
 	rewind(conn->file);
 
-	int rc = fwrite(conn->db, sizeof(Struct database), 1, conn->file);
+	int rc = fwrite(conn->db, sizeof(struct database), 1, conn->file);
 	if(rc != 1) Die("Die failed to write to database!");
 
 	rc = fflush(conn->file);
