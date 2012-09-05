@@ -1,3 +1,6 @@
 #!/bin/bash
+#script to compile database program and test
 set -e
-echo hello world
+if[find . -name ex17.c]
+echo ex17.c found
+fi
