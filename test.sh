@@ -3,6 +3,7 @@
 set -e
 #-f is an argument of test function, here represented as square brackets. it returns true of succesful
 if [ -f ex17.c ]&&[! -f ex17];
+#check page 689 of linux in anutshell for how to do anding properly
 then
 	echo ex17.c found
 	echo ex17 not found
